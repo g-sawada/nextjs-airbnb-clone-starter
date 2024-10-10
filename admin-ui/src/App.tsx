@@ -21,7 +21,7 @@ import { TripList } from "./trip/TripList";
 import { TripCreate } from "./trip/TripCreate";
 import { TripEdit } from "./trip/TripEdit";
 import { TripShow } from "./trip/TripShow";
-import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
+import { httpAuthProvider } from "./auth-provider/ra-auth-http";
 
 const App = (): React.ReactElement => {
   return (
@@ -29,7 +29,7 @@ const App = (): React.ReactElement => {
       <Admin
         title={"airbnb-server"}
         dataProvider={dataProvider}
-        authProvider={jwtAuthProvider}
+        authProvider={httpAuthProvider}
         theme={theme}
         dashboard={Dashboard}
         loginPage={Login}
