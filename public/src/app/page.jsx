@@ -1,10 +1,9 @@
+import Navbar from "airbnb/components/navbar/Navbar";
 import React from "react";
-
-import Navbar from "../components/navbar/Navbar";
 
 const page = () => {
   return <div>
-    <Navbar />
+    <Navbar/>
   </div>;
 };
 
