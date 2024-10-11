@@ -5,7 +5,7 @@ const ContextMenu = ({options, coordinates, contextMenu, setContextMenu}) => {
 
   return(
     <div 
-      ref={contextMenu}
+      ref={contextMenuRef}
       style={{
         boxShadow: "0 2px 5px 0 rgba(var(11,20,26),.26),0 2px 10px 0 rgba(11,20,26;),.16)",
         top:coordinates.y,
