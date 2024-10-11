@@ -3,8 +3,19 @@ import Image from "next/image";
 import AirbnbLogo from "../../svg/airbnb-logo";
 import { FiGlobe } from "react-icons/fi";
 import { RxHamburgerMenu } from "react-icons/rx";
+import ContextMenu from "../common/ContextMenu";
 
 const Navbar = () => {
+  const [isContextMenuVisible, setIsContextMenuVisible] = useState(false);
+
+  // contexMenuOptions is an array of objects with two keys: name and callback
+  const contextMenuOptions = [{
+    name : "Login",
+    callback :() =>  {
+      setIsContextMenuVisible(false);
+    } 
+  }]
+
   return (
     <header className="w-full flex flex-col justify-center transition-all duration-300 h-20 border-b border-b-gray-200">
       <div className="flex items-center justify-between px-20">
@@ -30,6 +41,18 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
+      {
+        isContextMenuVisible && (
+          <ContextMenu
+            contextMenu={isContextMenuVisible}
+            setContextMenu={setIsContextMenuVisible}
+            coordinates={{ 
+              x:window.innerWidth-250,
+              y: 70
+            }}
+            options={contextMenuOptions}  
+          />
+      )}
     </header>
   );
 };
