@@ -1,5 +1,7 @@
 import React from "react";
 import Link from "next/link";
+import { FiGlobe } from "react-icons/fi";
+import { PiCaretUpBold } from "react-icons/pi";
 
 export default function Footer() {
 
@@ -18,10 +20,21 @@ export default function Footer() {
         {links.map((link) => (
           <li key={link}>
             <Link href="#" className="capitalize">
-              {link.charAt(0).toUpperCase() + link.slice(1).toLowerCase()}
+              {link}
             </Link>
           </li>
         ))}
+      </ul>
+      <ul className="flex gap-4 font-medium">
+        <li className="flex items-center cursor-pointer">
+          <FiGlobe /> English (US)
+        </li>
+        <li className="cursor-pointer">
+          $ USD
+        </li>
+        <li className="flex items-center gap-2 cursor-pointer">
+          Support & resources <PiCaretUpBold />
+        </li>
       </ul>
     </div>
   );
