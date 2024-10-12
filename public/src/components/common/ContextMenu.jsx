@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 const ContextMenu = ({options, coordinates, contextMenu, setContextMenu}) => {
   const contextMenuRef = useRef(null);
 
-  const handleClick = (e) => (e, callback) => {
+  const handleClick = (e, callback) => {
     e.stopPropagation();
     callback();
   }
@@ -20,11 +20,11 @@ const ContextMenu = ({options, coordinates, contextMenu, setContextMenu}) => {
     >
     <ul>
       {
-        options.map(({ name, callBack }) => (
+        options.map(({ name, callback }) => (
           <li 
-            className="hover:bg^gray-100 pl-5 pr-10 py-2 cursor-pointer"
+            className="hover:bg-gray-100 pl-5 pr-10 py-2 cursor-pointer"
             key={name}
-            onClick={e => handleClick(e, callBack)}
+            onClick={e => handleClick(e, callback)}
           >
             <span>{name}</span>
 
