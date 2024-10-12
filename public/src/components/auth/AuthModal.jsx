@@ -1,6 +1,7 @@
 'use client';
-import React from "react";
+import React, { useState } from "react";
 import { IoMdClose } from "react-icons/io";
+import FormInput from "../common/FormInput";
 
 const AuthModal = () => {
 
@@ -26,6 +27,15 @@ const AuthModal = () => {
               </div>
               <div className="p-5">
                 <h3 className="text-xl pb-5">Welcome to AirBnb</h3>
+                {
+                  userFound === null && 
+                    <FormInput
+                      name="email"
+                      placeholder="Email"
+                      value={email}
+                      setValue={setEmail}
+                    />
+                }
               </div>
             </div>
           </div>
