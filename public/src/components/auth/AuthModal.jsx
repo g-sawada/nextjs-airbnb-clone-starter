@@ -3,6 +3,14 @@ import React from "react";
 import { IoMdClose } from "react-icons/io";
 
 const AuthModal = () => {
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [firstLast, setFirstLast] = useState("");
+
+  const [userFound, setUserFound] = useState(null);
+
   return(
     <div className="relative z-50">
       <div className="fixed inset-0 bg-gray-500 opacity-75 transition-opacity"></div>
