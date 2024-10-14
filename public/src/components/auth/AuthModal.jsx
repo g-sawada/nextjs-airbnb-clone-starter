@@ -4,6 +4,7 @@ import { IoMdClose } from "react-icons/io";
 import FormInput from "../common/FormInput";
 
 const AuthModal = () => {
+  const { setAuthModal } = useAppStore();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -31,7 +32,10 @@ const AuthModal = () => {
           <div className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
             <div className="bg-white pb-4 pt-5 ">
               <div className="border-b border-b-gray-200 flex items-center justify-center relative pb-5">
-                <span className="absolute left-5 cursor-pointer text-lg">
+                <span
+                  className="absolute left-5 cursor-pointer text-lg"
+                  onClick={() => setAuthModal()}
+                >
                   <IoMdClose />
                 </span>
                 <span>Log in or signup</span>
@@ -85,8 +89,8 @@ const AuthModal = () => {
                     userFound === null
                       ? verifyEmail
                       : userFound
-                        ? handleLogin
-                        : handleSignup
+                      ? handleLogin
+                      : handleSignup
                   }
                 >
                   Continue
