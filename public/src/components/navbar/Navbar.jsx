@@ -6,21 +6,27 @@ import AirbnbLogo from "../../svg/airbnb-logo";
 import { FiGlobe } from "react-icons/fi";
 import { RxHamburgerMenu } from "react-icons/rx";
 import ContextMenu from "../common/ContextMenu";
+import { useAppStore } from "airbnb/store/store";
 
 const Navbar = () => {
-  const [isContextMenuVisible, setIsContextMenuVisible] = useState(false);
+
+  const { setAuthModal } = useAppStore();
+
+  const [isContextMenudVisible, setIsContextMenuVisible] = useState(false);
 
   // contexMenuOptions is an array of objects with two keys: name and callback
   const contextMenuOptions = [
     {
       name : "Login",
       callback :() =>  {
+        setAuthModal();
         setIsContextMenuVisible(false);
       },
     },
     {
       name : "Sign up",
       callback :() =>  {
+        setAuthModal();
         setIsContextMenuVisible(false);
       },
     },
