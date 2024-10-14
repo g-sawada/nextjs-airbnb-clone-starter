@@ -12,7 +12,7 @@ const Navbar = () => {
 
   const { setAuthModal } = useAppStore();
 
-  const [isContextMenudVisible, setIsContextMenuVisible] = useState(false);
+  const [isContextMenuVisible, setIsContextMenuVisible] = useState(false);
 
   // contexMenuOptions is an array of objects with two keys: name and callback
   const contextMenuOptions = [
