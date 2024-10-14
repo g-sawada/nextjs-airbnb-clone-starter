@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import FormInput from "../common/FormInput";
+import { useAppStore } from "airbnb/store/store";
 
 const AuthModal = () => {
   const { setAuthModal } = useAppStore();
