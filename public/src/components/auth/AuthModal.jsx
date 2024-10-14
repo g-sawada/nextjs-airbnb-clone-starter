@@ -71,6 +71,7 @@ const AuthModal = () => {
                     />      
                   </div>          
                 }
+                <button className="bg-airbnb-theme-color py-3 mt-5 w-full text-white text-lg font-medium rounded-md">Continue</button>
               </div>
             </div>
           </div>
