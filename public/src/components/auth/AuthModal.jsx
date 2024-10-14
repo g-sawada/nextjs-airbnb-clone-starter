@@ -12,7 +12,7 @@ const AuthModal = () => {
 
   const [userFound, setUserFound] = useState(null);
 
-  return(
+  return (
     <div className="relative z-50">
       <div className="fixed inset-0 bg-gray-500 opacity-75 transition-opacity"></div>
       <div className="fixed inset-0 z-10 overflow-y-auto">
@@ -27,17 +27,15 @@ const AuthModal = () => {
               </div>
               <div className="p-5">
                 <h3 className="text-xl pb-5">Welcome to AirBnb</h3>
-                {
-                  userFound === null && 
-                    <FormInput
-                      name="email"
-                      placeholder="Email"
-                      value={email}
-                      setValue={setEmail}
-                    />
-                }
-                { 
-                  userFound === true &&
+                {userFound === null && (
+                  <FormInput
+                    name="email"
+                    placeholder="Email"
+                    value={email}
+                    setValue={setEmail}
+                  />
+                )}
+                {userFound === true && (
                   <FormInput
                     name="password"
                     placeholder="Password"
@@ -45,9 +43,8 @@ const AuthModal = () => {
                     value={password}
                     setValue={setPassword}
                   />
-                }
-                {
-                  userFound === false &&
+                )}
+                {userFound === false && (
                   <div className="flex gap-3 flex-col">
                     <FormInput
                       name="firstName"
@@ -68,17 +65,28 @@ const AuthModal = () => {
                       type="password"
                       value={password}
                       setValue={setPassword}
-                    />      
-                  </div>          
-                }
-                <button className="bg-airbnb-theme-color py-3 mt-5 w-full text-white text-lg font-medium rounded-md">Continue</button>
+                    />
+                  </div>
+                )}
+                <button
+                  className="bg-airbnb-theme-color py-3 mt-5 w-full text-white text-lg font-medium rounded-md"
+                  onClick={
+                    userFound === null
+                      ? verifyEmail
+                      : userFound
+                        ? handleLogin
+                        : handleSignup
+                  }
+                >
+                  Continue
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 };
 
 export default AuthModal;
