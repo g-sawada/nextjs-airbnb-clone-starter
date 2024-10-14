@@ -8,7 +8,7 @@ const AuthModal = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
-  const [firstLast, setFirstLast] = useState("");
+  const [lastName, setLastName] = useState("");
 
   const [userFound, setUserFound] = useState(null);
 
@@ -35,6 +35,41 @@ const AuthModal = () => {
                       value={email}
                       setValue={setEmail}
                     />
+                }
+                { 
+                  userFound === true &&
+                  <FormInput
+                    name="password"
+                    placeholder="Password"
+                    type="password"
+                    value={password}
+                    setValue={setPassword}
+                  />
+                }
+                {
+                  userFound === false &&
+                  <div className="flex gap-3 flex-col">
+                    <FormInput
+                      name="firstName"
+                      placeholder="First Name"
+                      value={firstName}
+                      setValue={setFirstName}
+                    />
+                    <FormInput
+                      name="lastName"
+                      placeholder="Last Name"
+                      type="password"
+                      value={lastName}
+                      setValue={setLastName}
+                    />
+                    <FormInput
+                      name="password"
+                      placeholder="Password"
+                      type="password"
+                      value={password}
+                      setValue={setPassword}
+                    />      
+                  </div>          
                 }
               </div>
             </div>
