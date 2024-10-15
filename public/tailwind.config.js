@@ -12,7 +12,7 @@ module.exports = {
           "linear-gradient(to right,#E61E4D 0%,#E31C5F 50%,#D70466 100%)",
       },
       colors: {
-        "airbnb-theme-color": "#FF385C",
+        "airbnb-theme-color": "#FF5A5F",
         "airbnb-light-black": "#222222",
         "airbnb-light-gray": "#717171",
       },
