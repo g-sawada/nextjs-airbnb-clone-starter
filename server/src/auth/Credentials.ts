@@ -11,6 +11,7 @@ export class Credentials {
   @IsString()
   @Field(() => String, { nullable: false })
   username!: string;
+
   @ApiProperty({
     required: true,
     type: String,
@@ -18,4 +19,39 @@ export class Credentials {
   @IsString()
   @Field(() => String, { nullable: false })
   password!: string;
+}
+
+@InputType()
+export class SignupCredentials {
+  @ApiProperty({
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String, { nullable: false })
+  username!: string;
+
+  @ApiProperty({
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String, { nullable: false })
+  password!: string;
+
+  @ApiProperty({
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String, { nullable: false })
+  firstName!: string;
+
+  @ApiProperty({
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String, { nullable: false })
+  lastName!: string;
 }
