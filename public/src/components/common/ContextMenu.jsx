@@ -11,6 +11,7 @@ const ContextMenu = ({options, coordinates, contextMenu, setContextMenu}) => {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if(contextMenuRef.current && !contextMenuRef.current.contains(event.target)) {
+      // NOTE: 前半の条件式は、contextMenuRef.currentが存在する（nullでない）ことを確認している
         setContextMenu(false);
         }
       };
